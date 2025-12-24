@@ -10,7 +10,6 @@ import ya.praktikum.Burger;
 import ya.praktikum.Ingredient;
 import ya.praktikum.IngredientType;
 
-import static io.restassured.RestAssured.when;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.when;
 
@@ -34,19 +33,19 @@ public class TestBurger {
     }
 
     @Test
-    public void setBuns_UpdatesBurgerBunReference() {
+    public void setBunsUpdatesBurgerBunReference() {
         burger.setBuns(mockBun);
         assertEquals(mockBun, burger.bun);
     }
 
     @Test
-    public void addIngredient_IncreasesSizeByOne() {
+    public void addIngredientIncreasesSizeByOne() {
         burger.addIngredient(mockSauce);
         assertEquals(1, burger.ingredients.size());
     }
 
     @Test
-    public void addIngredient_StoresCorrectInstance() {
+    public void addIngredientStoresCorrectInstance() {
         burger.addIngredient(mockSauce);
         assertEquals(mockSauce, burger.ingredients.get(0));
     }
